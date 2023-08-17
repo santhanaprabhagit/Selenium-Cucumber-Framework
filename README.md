@@ -3,7 +3,7 @@
 ---
 
 ## Framework Purpose
-This project aims to give an inspiring or sample of automation test framework that uses Selenium and Cucumber with Java as the programming language.
+This project aims to give an inspiring or sample of automation test framework that uses Selenium and Cucumber with Java as the programming language.Sample web page used to test : https://www.automationexercise.com/ Please register at the above website and update your credentials into configuration.properties
 
 ---
 
