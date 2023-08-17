@@ -33,7 +33,7 @@ public class LoginPage {
     }
     public Boolean isLoginTextFieldAvailble()
     {
-        Wait.untilAjaxCallIsDone(webDriver, 30L);
+        Wait.untilAjaxCallIsDone(webDriver, Duration.ofSeconds(30L));
         return inputUserEmail.isEnabled();
     }
     public void enterLoginPassword(String userPassword)
