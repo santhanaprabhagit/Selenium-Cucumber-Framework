@@ -33,7 +33,6 @@ public class AllDriverManager {
                 chromeOptions.addArguments("--headless", "--window-size=1644,868");
                 webDriver = new ChromeDriver(chromeOptions);
                 Headless browser code ends here*/
-                System.setProperty("webdriver.chrome.driver", "C://Users//44744//Documents//Prabha//Moata_Automation//Automation//Drivers//chromedriver.exe");
                 webDriver = new ChromeDriver();
                 break;
             case FIREFOX:
