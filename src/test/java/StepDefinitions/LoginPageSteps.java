@@ -3,7 +3,7 @@ package StepDefinitions;
 import Managers.FileReaderManager;
 import PageObjects.LoginPage;
 import PageObjects.MainPage;
-import Utilities.TestContext;
+import Helpers.TestContext;
 import io.cucumber.java.en.Given;
 import org.testng.Assert;
 
