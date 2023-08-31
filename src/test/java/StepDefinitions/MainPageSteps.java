@@ -2,7 +2,7 @@ package StepDefinitions;
 
 import PageObjects.LoginPage;
 import PageObjects.MainPage;
-import Utilities.TestContext;
+import Helpers.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
