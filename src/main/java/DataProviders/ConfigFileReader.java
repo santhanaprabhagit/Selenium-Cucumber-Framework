@@ -44,17 +44,6 @@ public class ConfigFileReader {
             throw new RuntimeException("url not specified in the config file.");
     }
 
-    public long getTime() {
-        String timeout = properties.getProperty("timeout");
-
-        //Common If...Else
-        if (timeout != null) {
-            return Long.parseLong(timeout);
-        } else {
-            throw new RuntimeException("timeout not specified in the config file.");
-        }
-    }
-
     public DriverType getBrowser()  {
         String browserName = properties.getProperty("browser");
 
