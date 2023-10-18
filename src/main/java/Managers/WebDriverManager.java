@@ -7,8 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverManager {
@@ -31,27 +33,28 @@ public class WebDriverManager {
                 chromeOptions.addArguments("--headless", "--window-size=1644,868");
                 webDriver = new ChromeDriver(chromeOptions);
                 Headless browser code ends here*/
+               /* ChromeOptions options = new ChromeOptions();
+                options.addArguments("--remote-allow-origins=*");
+                DesiredCapabilities cp = new DesiredCapabilities();
+                cp.setCapability(ChromeOptions.CAPABILITY, options);
+                options.merge(cp);*/
                 webDriver = new ChromeDriver();
+
                 break;
             case FIREFOX:
-                io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("--headless");
                 webDriver = new FirefoxDriver(firefoxOptions);
                 break;
             case EDGE:
-                io.github.bonigarcia.wdm.WebDriverManager.edgedriver().setup();
                 webDriver = new EdgeDriver();
                 break;
             case SAFARI:
                 webDriver = new SafariDriver();
                 break;
         }
-        long time = FileReaderManager.getInstance().getConfigFileReader().getTime();
-
-        webDriver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().pageLoadTimeout(time, TimeUnit.SECONDS);
-        webDriver.manage().timeouts().setScriptTimeout(time, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
         return webDriver;
     }
 
